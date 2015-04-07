@@ -1,0 +1,14 @@
+{
+  "obj" : [
+   	{
+		name : "PowerMonitorSwitch",
+  		device: 0,
+      		instance: 0
+      		commandClasse: 50,
+		data: 2,
+		sensorTypeString: "Power",
+		scaleString: "W",scaleString
+		dataType: "float",
+	}
+  ]
+}

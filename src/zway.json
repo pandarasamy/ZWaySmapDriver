@@ -1,0 +1,14 @@
+{
+  "device": [
+   	{
+	 "name": "PowerMonitorSwitch",
+	 "sensor": "Power",
+	 "unit": "W",
+	 "type": "double",
+  	 "device": 4,
+      	 "instance": 0,
+      	 "commandClass": 50,
+	 "data": 2
+	}
+  ]
+}
