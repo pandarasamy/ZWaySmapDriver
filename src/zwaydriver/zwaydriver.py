@@ -38,7 +38,8 @@ class ZwayDriver(SmapDriver):
 				if key in res:
 					dd = res[key]
 					val = dd['val']['value']
-					self.add(path, time.time(), float(val))
+					time = dd['val']['updateTime']
+					self.add(path, time, float(val))
 					print path, val		
 		except Exception, e:
 			log.err()
