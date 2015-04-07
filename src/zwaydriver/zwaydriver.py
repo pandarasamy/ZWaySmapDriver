@@ -28,7 +28,7 @@ class ZwayDriver(SmapDriver):
 			url = str(self.apiurl + "/" + str(int(time.time()-30)))
 			print url
 			res = req.post(url)
-			res = res.json
+			res = json.loads(res.text)
 			print res
 			for dev in self.db["device"]:
 				path = str('/' + dev['name'] + '/' + dev['sensor'])
@@ -38,8 +38,8 @@ class ZwayDriver(SmapDriver):
 				if key in res:
 					dd = res[key]
 					val = dd['val']['value']
-					time = dd['val']['updateTime']
-					self.add(path, time, float(val))
+					updateTime = dd['val']['updateTime']
+					self.add(path, int(updateTime), float(val))
 					print path, val		
 		except Exception, e:
 			log.err()
