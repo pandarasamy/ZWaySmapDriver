@@ -25,9 +25,10 @@ class ZwayDriver(SmapDriver):
 
      def update(self):
 		try:
-			url = str(self.apiurl + "/" + str(int(time.time())))
+			url = str(self.apiurl + "/" + str(int(time.time()-30)))
+			print url
 			res = req.post(url)
-			res = res.json()
+			res = res.json
 			print res
 			for dev in self.db["device"]:
 				path = str('/' + dev['name'] + '/' + dev['sensor'])
